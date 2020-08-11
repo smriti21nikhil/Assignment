@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Maersk Assignment</title>
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+ <!-- Material Design Bootstrap -->
+   <link rel="stylesheet" href="css/mdb.min.css">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="">
+
+	<!-- MAIN CONTAINER DIV STARTS HERE -->
+		<div class="container  ">
+			<div class="row pt-md-4 bg-sm-dark">
+				<div class="col-12 text-center">
+					<h1 class="h6"> Shuffle and Sort </h1>
+				</div>
+			</div>
+			<div class="row grey lighten-3 pb-5 mb-5 border-2 border-light border-top">
+			<!-- LEFT SECTION WITH NUMBER BOARD STARTS HERE -->
+				<div  class="col-md-9 order-2 order-md-1 col-sm-12 col-12">
+					<div class="row" id="shuffle">
+					
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-light-grey col-lg-4 col-sm-12 col-12">
+							<span class="h1 white-text card-number">1</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-light-blue col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text card-number">2</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-dark-blue col-lg-4 col-sm-12 col-12">
+							<span class="h1 white-text card-number">3</span>
+						</div>					
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-light-blue col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text card-number">4</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-dark-blue col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text card-number">5</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-dark-grey col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text card-number">6</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-dark-grey col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text  card-number">7</span>							
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-light-grey col-lg-4 col-sm-12 col-12" >
+							<span class="h1 white-text card-number">8</span>
+						</div>
+						<div class="col-md-4 box text-center p-md-5 p-sm-2 bg-dark-blue col-lg-4 col-sm-12 col-12">
+							<span class="h1 white-text card-number">9</span>
+						</div>
+					</div>
+					<div class="row mt-2">
+						<div class="col-12 text-center">
+							<span class="font-small "><em>Shuffle and sort by Smriti</em></span>
+						</div>
+					</div>
+				</div>
+			<!-- LEFT SECTION WITH NUMBER BOARD ENDS HERE -->
+			<!-- RIGHT SECTION WITH ACTION BUTTONS STARTS HERE -->
+				<div class="col-12 pl-4 order-1 order-md-2 text-center pr-4 col-md-3 col-lg-3 col-sm-12">
+					<button id="shufflebtn" class="btn mb-md-4 mt-md-3 rounded btn-block btn-primary">Shuffle </button>				
+					<button onclick="sortCard()" class="btn btn-block rounded btn-primary" >Sort </button>
+				</div>
+			<!-- RIGHT SECTION WITH ACTION BUTTONS ENDS HERE -->
+			</div>
+			
+		</div>
+	<!-- MAIN CONTAINER DIV ENDS HERE -->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+ 
+  <script>
+   var parent  = document.getElementById("shuffle");
+   function shuffle(elems) {		
+		var frag = document.createDocumentFragment();	
+		while (parent.children.length) {
+			frag.appendChild(parent.children[Math.floor(Math.random() * parent.children.length)]);
+		}
+		parent.appendChild(frag);
+	}
+	
+	var button = document.getElementById('shufflebtn');
+	button.addEventListener('click', function() { shuffle( document.querySelectorAll('#shuffle > div ') ) }, false);
+	
+	function sortCard(card) {
+		var div = document.querySelector('#shuffle'),
+        para = document.querySelectorAll('#shuffle div');
+		var paraArr = [].slice.call(para).sort(function (a, b) {
+			return a.textContent > b.textContent ? 1 : -1;
+		});
+		paraArr.forEach(function (p) {
+			div.appendChild(p);
+		});
+		
+	}
+	
+
+  </script>
+</body>
+</html>

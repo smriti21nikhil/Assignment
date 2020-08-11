@@ -1,0 +1,72 @@
+.lighten-3{
+	background-color: #EFEFEF !important;
+	
+}
+.border-light {
+	border-top-color: #BFBFBF !important;
+}
+.border-2 {
+	border-top-style: solid !important;
+	border-top-width: 3px !important;
+	
+}
+.bg-light-grey {
+	background-color: #6F98A8 !important;
+}
+.bg-dark-blue {
+	background-color: #2F454E !important;
+}
+.bg-light-blue {
+	background-color: #2B8EAD !important;
+}
+.bg-dark-grey {
+	background-color: #BFBFBF !important;
+}
+.card-number {	
+	font-size: 52px;
+}
+.btn-primary {
+	background-color: #72C3DC !important;	
+}
+@media only screen and (max-width: 550px) {
+	.grey.lighten-3{
+	background-color: #fff !important;
+	
+}
+	.bg-sm-dark {		
+		background-color: #000;
+		color: #fff !important;
+		padding-top: 10px;
+	}
+	.box {
+		background-color: #EFEFEF !important;
+		margin-bottom: 5px;
+		padding: 10px;
+		border-left: 6px solid;
+		border-radius: 0px;
+		
+	}
+	.box span {
+		color: #000 !important;
+		font-size: 24px;
+	}
+	.bg-light-grey{
+		border-color: #6F98A8 !important;
+	}
+	.bg-dark-blue {
+		border-color: #2F454E !important;
+	}
+	.bg-light-blue {
+		border-color: #2B8EAD !important;
+	}
+	.bg-dark-grey {
+		border-color: #BFBFBF !important;
+	}
+	.btn-block {
+		width: auto;
+		display: inline-block;
+		margin: 10px !important;
+	}
+	
+}
+
